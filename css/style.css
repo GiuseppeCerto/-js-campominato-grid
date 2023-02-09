@@ -15,17 +15,18 @@ body{
 
 }
 
-.griglia {
+#grill {
 	display: flex;
 	flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.griglia > * {
+#grill > * {
 	/* width: calc(100% / 10); */
 	aspect-ratio: 1;
 	border: 2px solid crimson;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 24px;
+	font-size: 14px;
 }

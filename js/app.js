@@ -14,14 +14,13 @@ bottonStart.addEventListener('click', function () {
     const grillElement = document.getElementById('grill')
 
     for (let i = 0; i < numberOfCells; i++) {
+
         let numberCycle = i + 1
+        
         console.log(numberCycle)
 
-        let divString = `<div class="cell" style="width: calc(100% / ${sideNumberOfCells});" >${numberCycle}</div>`
-        console.log(divString)
+        const cellElement = (`<div class="cell" style="width: calc(100% / ${sideNumberOfCells.value});" >${numberCycle}</div>`);
 
-        const cellElement = document.createTextNode(`<div class="cell" style="width: calc(100% / ${sideNumberOfCells});" >${numberCycle}</div>`);
-
-        grillElement.append(cellElement)
+        grillElement.innerHTML += cellElement
     }
 })
