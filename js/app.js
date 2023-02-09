@@ -20,16 +20,8 @@ bottonStart.addEventListener('click', function () {
         let divString = `<div class="cell" style="width: calc(100% / ${sideNumberOfCells});" >${numberCycle}</div>`
         console.log(divString)
 
-        let cellElement = document.createElement(<div></div>)
-    }
+        const cellElement = document.createTextNode(`<div class="cell" style="width: calc(100% / ${sideNumberOfCells});" >${numberCycle}</div>`);
 
-    const celleElements = document.querySelectorAll('.cell')
-
-    for (let i = 0; i < celleElements.length; i++) {
-        const cell = celleElements[i]
-
-        cell.addEventListener('click', function () {
-            console.log(i + 1)
-        })
+        grillElement.append(cellElement)
     }
 })
