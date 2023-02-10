@@ -16,7 +16,7 @@ bottonStart.addEventListener('click', function () {
 
         let numberCycle = i + 1
 
-        const cellElement = (`<div class="cell" style="width: calc(100% / ${sideNumberOfCells.value}); font-size: 12px;"> </div>`);
+        const cellElement = (`<div class="cell" style="width: calc(100% / ${sideNumberOfCells.value}); font-size: 12px;">${numberCycle}</div>`);
 
         grillElement.innerHTML += cellElement
     }
@@ -41,6 +41,14 @@ bottonStart.addEventListener('click', function () {
         cell.removeEventListener('click', cellClicked)
 
         console.log(cell.innerHTML)
+
+        let numberCell = parseInt(cell.innerHTML)
+
+        console.log(numberCell)
+
+        console.log('Numero cella',numberCell)
+
+        console.log(numberCell === bombsBox)
     }
 
     console.log(cellElements.length)
@@ -49,19 +57,14 @@ bottonStart.addEventListener('click', function () {
 
     bombsBox = []
 
-    console.log(bombsBox)
-
-    // generare numeri random(bombe): n. numeri in base al numero di caselle
-
-
-    while(bombsBox <= (cellElements.length / 5)){
+    while(bombsBox.length <= (cellElements.length / 5)){
 
         bombs = Math.floor(Math.random() * ((cellElements.length) - 1 + 1) + 1);
 
-        bombsBox.push(bombs)
-    
-        console.log('controllo', bombsBox < cellElements.length)
+        if(!bombsBox.includes(bombs)){
 
+            bombsBox.push(bombs)
+        }
     }
 })   
 
