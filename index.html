@@ -12,18 +12,28 @@
     
     <main>
         <div class="container">
-          <div class="row">
-            <div class="col-12 d-flex flex-column">
-                <label for="customRange3" class="align-self-center fs-3 text-warning form-label">Livello di difficoltà</label>
-                <input type="range" class="form-range" min="5" max="25" step="5" id="levelRange">
+          <div class="row pt-2 pb-3 px-5 py-5 rounded bg-game">
+            <div class="col-12 d-flex flex-column game-setting-section">
+                <div class="align-self-center fs-1 mb-2 text-warning">Campominato</div>
+                <label for="customRange3" class="align-self-center fs-5 mb-4 text-white form-label">Livello di difficoltà</label>
+                <div class="col-12 d-flex justify-content-between mb-1">
+                    <div class="text-white fw-lighter">Very Easy</div>
+                    <div class="text-white fw-lighter">Easy</div>
+                    <div class="text-white fw-lighter">Medium</div>
+                    <div class="text-white fw-lighter">Hard</div>
+                    <div class="text-white fw-lighter">Very Hard</div>
+                </div>
+                <input type="range" class="range" min="5" max="25" step="5" id="levelRange">
             </div>
 
             <div class="col-12 d-flex justify-content-center mt-4">
-                <button type="button" class="btn btn-danger" id="gameStartBtn">Gioca</button>
+                <button type="button" class="btn btn-success" id="gameStartBtn">Play</button>
             </div>
 
-            <div class="col-12" id="grill">
+            <div class="col-12" id="resetGame">
+                <div id="grill">
 
+                </div>
             </div>
           </div>
         </div>

@@ -1,26 +1,43 @@
 
-const bottonStart = document.getElementById('gameStartBtn')
+let bottonStart = document.getElementById('gameStartBtn')
 
 bottonStart.addEventListener('click', function () {
 
-    let sideNumberOfCells = document.getElementById('levelRange')
+    bottonStart.innerHTML = 'Reset'
 
-    console.log(sideNumberOfCells.value)
+    let sideNumberOfCells = document.getElementById('levelRange')
 
     let numberOfCells = sideNumberOfCells.value * sideNumberOfCells.value
 
-    console.log(numberOfCells)
-
     const grillElement = document.getElementById('grill')
 
+    grillElement.innerHTML = ''
+    
     for (let i = 0; i < numberOfCells; i++) {
 
         let numberCycle = i + 1
-        
-        console.log(numberCycle)
 
         const cellElement = (`<div class="cell" style="width: calc(100% / ${sideNumberOfCells.value});" >${numberCycle}</div>`);
 
         grillElement.innerHTML += cellElement
     }
-})
+
+    const cellElements = document.querySelectorAll('.cell')
+
+    for (let i = 0; i < cellElements.length; i++) {
+
+        const cell = cellElements[i]
+
+        cell.addEventListener('click', function () {
+
+            cell.classList.add('bg-warning');
+
+            cell.classList.add('shadow-button');
+
+        })
+    }
+})    
+
+
+
+
