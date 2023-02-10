@@ -1,4 +1,3 @@
-
 let bottonStart = document.getElementById('gameStartBtn')
 
 bottonStart.addEventListener('click', function () {
@@ -17,7 +16,7 @@ bottonStart.addEventListener('click', function () {
 
         let numberCycle = i + 1
 
-        const cellElement = (`<div class="cell" style="width: calc(100% / ${sideNumberOfCells.value});" >${numberCycle}</div>`);
+        const cellElement = (`<div class="cell" style="width: calc(100% / ${sideNumberOfCells.value}); font-size: 12px;"> </div>`);
 
         grillElement.innerHTML += cellElement
     }
@@ -28,15 +27,45 @@ bottonStart.addEventListener('click', function () {
 
         const cell = cellElements[i]
 
-        cell.addEventListener('click', function () {
-
-            cell.classList.add('bg-warning');
-
-            cell.classList.add('shadow-button');
-
-        })
+        cell.addEventListener('click', cellClicked)
     }
-})    
+
+    function cellClicked (event){
+
+        const cell = event.target
+
+        cell.classList.add('bg-warning');
+
+        cell.classList.add('cell-style');
+
+        cell.removeEventListener('click', cellClicked)
+
+        console.log(cell.innerHTML)
+    }
+
+    console.log(cellElements.length)
+
+    console.log(cellElements.length / 5)
+
+    bombsBox = []
+
+    console.log(bombsBox)
+
+    // generare numeri random(bombe): n. numeri in base al numero di caselle
+
+
+    while(bombsBox <= (cellElements.length / 5)){
+
+        bombs = Math.floor(Math.random() * ((cellElements.length) - 1 + 1) + 1);
+
+        bombsBox.push(bombs)
+    
+        console.log('controllo', bombsBox < cellElements.length)
+
+    }
+})   
+
+
 
 
 

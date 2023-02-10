@@ -32,7 +32,7 @@ body{
 }
 
 .range{
-    width: 740px;
+    width: 94%;
     align-self: center;
 }
 
@@ -44,7 +44,6 @@ body{
 }
 
 #grill > * {
-    /* width: calc(100% / 10); */
 	aspect-ratio: 1;
     border: 1px solid lightgray;
 	display: flex;
@@ -53,12 +52,13 @@ body{
 	font-size: 14px;
 }
 
+
 .btn-success{    
     width: 150px;
     border: 1px solid yellowgreen;
 }
 
-.shadow-button{
+.cell-style{
     -webkit-box-shadow: inset 0px 0px 10px #808080;
     -moz-box-shadow: inset 0px 0px 10px #808080;
     box-shadow: inset 0px 0px 10px #808080;
